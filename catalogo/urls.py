@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import CategoriaViewSet, ProductoViewSet, MarcaViewSet
+from .views import CategoriaViewSet, ProductoViewSet, MarcaViewSet, registro, login, logout
 
 #Creamos el router
 router = DefaultRouter()
@@ -12,5 +12,8 @@ router.register(r'marcas', MarcaViewSet)
 
 #Ahora las rutas se generan automáticamente
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('registro/', registro, name='registro'),
+    path('login/', login, name='login'),
+    path('logout/', logout, name='logout'),
 ]

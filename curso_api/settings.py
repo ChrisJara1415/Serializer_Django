@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'accounts',
     'catalogo',
-    'frontend'
+    'frontend',
+    'rest_framework.authtoken',
 ]
 
 REST_FRAMEWORK = {
@@ -50,7 +51,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
     ],
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ],
 }
 
